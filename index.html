@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ToDo List</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://kit.fontawesome.com/609a466063.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div id="header" class="header">
+		<h1 >To Do List</h1>
+	</div>
+	<div id="type-list-section">
+		<div class="inputContainer">
+			<input type="text" name="todo-text" placeholder="Type your To Do List" id="task" value="">
+			<button id="add" class="add" onclick="addTask()">Add Task</button>
+			<button id="clear" class="clear" >Clear</button>
+		</div>
+		<div class="tasks-header">Tasks</div>
+		<div id="list-sectionn" ></div>
+		<div id="list-section" class="list-section">
+			<div class="tasks-container" id="tasks-container">
+				<input type="checkbox" id="checkbox" class="checkbox" >
+				<div class="content" contenteditable="true">
+				</div>
+				<button class="delete">Delete</button>
+				<div class="hide">Click to edit the text</div>
+			</div>
+		</div>
+	</div>
+	<!--Social section starts here-->
+	<section class="social">
+		<div class="container text-center">
+			<ul>
+				<li>
+					<a href="https://www.facebook.com/profile.php?id=100090659045023" target="_blank" alt="Facebook icon"><img src="https://img.icons8.com/fluency/48/null/facebook-new.png"/></a>
+				</li>
+				<li>
+					<a href="https://www.instagram.com/afrahdev/" target="_blank" alt="Instagram icon"><img src="https://img.icons8.com/fluency/48/null/instagram-new.png"/></a>
+				</li>
+				<li>
+					<a href="https://twitter.com/afrahdev" target="_blank"  alt="Twitter icon"><img src="https://img.icons8.com/fluency/48/null/twitter.png"/></a>
+				</li>
+			</ul> 
+		</div>
+	</section>
+
+<!--Social section Ends here-->
+<script>
+	
+	const newTask = document.getElementById("task");
+	let clearButton=document.getElementById("clear");
+	function addTask(){
+
+		if (!newTask.value) {
+			 alert("Please fill out the task");
+		}else{
+			let listSection=document.getElementById("list-sectionn");
+			let listContainer = document.createElement("div");
+			listContainer.classList.add("list-section");
+			listSection.appendChild(listContainer);
+
+			let newTaskContainer = document.createElement("div");
+			newTaskContainer.classList.add("tasks-container");
+			listContainer.appendChild(newTaskContainer);
+
+			var newCheckEl=document.createElement("INPUT");
+			newCheckEl.setAttribute("type", "checkbox");
+			newCheckEl.classList.add("checkbox");
+			newTaskContainer.appendChild(newCheckEl);
+
+			let newContEl = document.createElement("div");
+			newContEl.contentEditable="true";
+			newContEl.classList.add("content");
+			newContEl.innerHTML=newTask.value;
+			newTaskContainer.appendChild(newContEl);
+
+			let hoverOnContent=document.createElement("div");
+			hoverOnContent.classList.add("hide");
+			hoverOnContent.innerHTML="Click to edit";
+			newTaskContainer.appendChild(hoverOnContent);
+
+			var newButtonEl = document.createElement("div");
+			newButtonEl.setAttribute("type", "BUTTON");
+			newButtonEl.className="delete-round";
+			newButtonEl.innerHTML='<i class="fa-regular fa-circle-xmark"></i>';
+			newTaskContainer.appendChild(newButtonEl);
+			newTask.value="";
+			
+			newButtonEl.addEventListener('click', () => {
+			newTaskContainer.remove();
+			console.log("Clicked");
+			});
+
+			clearButton.addEventListener('click', () => {
+			listContainer.remove();
+			console.log("Clicked clear");
+		});	
+	}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,251 @@
+
+body{
+	position: relative;
+ 	background: #b19cd9;
+    display: flex;
+    flex-direction: column;
+}
+.header h1{
+	font-size: 40px;
+	color: #ffffff;
+	text-align: center;
+	margin-top: 80px;
+}
+#type-list-section{
+	text-align: center;
+
+}
+.tasks-header{
+	margin-top: 0 ;
+	margin-bottom: 0;
+	color: white;
+	text-align: left;
+	margin-left: 20%;
+	font-size: 30px;
+}
+.inputContainer{
+	font-size: 20px;
+	margin-bottom: 30px;
+}
+#task{
+	width: 60%;
+	border: 0;
+	padding: 16px;
+	border-radius: 6px;
+	font-size: 16px;
+}
+.add{
+	border: 0;
+	background: green;	
+	border-radius: 7px;
+	padding: 14px;
+	font-size: 15px;
+	color: white;
+}
+.clear{
+	border: 0;
+	background: red;
+	border-radius: 7px;
+	padding: 13px;
+	font-size: 15px;
+	color: white;
+}
+#list-section{
+	display: none;
+	margin: 0 130px;
+	border: 0px solid black;
+	border-radius: 7px;
+	background: #cbafdb;
+}
+.tasks-container{
+	padding: 8px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	align-content: center;
+	text-align: center;
+	position: relative;
+}
+.checkbox{
+	position: absolute;
+	left: 0;
+  	border-radius: 10px;
+	width: 35px;
+	height: 35px;
+	margin-left: 15%;
+}
+.tasks-container input[type=checkbox]{
+	accent-color:green;
+	cursor: pointer;
+}
+input[type=checkbox]:checked + .content{
+	  text-decoration:  line-through;
+
+}
+.content{
+	padding: 13px;
+	text-align: left;
+	color: black;
+	background: #ccccff;
+	font-size: 20px;
+	border-radius: 18px;
+	border: 1px solid black;
+	flex-basis: 50%;
+	margin-left:  19%;
+	margin-right: 19%;
+	margin-top: 2px;
+}
+.hide{
+	display: none;
+	transition: 0.9s;
+	color: black;
+	position: absolute;
+	right: 0;
+	margin-right: 16%;
+}
+.content:hover+.hide{
+	display: block;
+
+}
+.delete{
+	border: 0;
+	background: red;
+	border-radius: 7px;
+	padding: 10px;
+	font-size: 15px;
+	color: white;
+	position: absolute;
+	right: 15%;
+	bottom: 18%;
+}
+.delete-round{
+	border: 0;
+	border-radius: 30px;
+	font-size: 30px;
+	color: white;
+	position: absolute;
+	right: 0;
+	margin-right: 25%;
+	transition: 0.5s;
+
+	}
+.delete-round:hover{
+	color: red;
+	cursor: pointer;
+}
+/*CSS for social */
+.social ul{
+	list-style-type: none;
+	justify-content: center;
+	position: fixed;
+	bottom: 0;
+}
+.social ul li{
+	padding: 1%;
+	margin: 47px -5px;
+	flex-direction: column;
+}
+
+
+@media only screen and (max-width: 950px){
+	.checkbox{
+		position: absolute;
+		left: 0;
+	  	border-radius: 10px;
+		width: 35px;
+		height: 35px;
+		margin-left: 14%;
+	}
+	.content{
+		padding: 15px;
+		text-align: left;
+		color: black;
+		background: #ccccff;
+		font-size: 19px;
+		flex-basis: 45%;
+		margin-left:  19%;
+		margin-right: 19%;
+		margin-top: 2px;
+	}
+	.delete-round{
+		border: 0;
+		border-radius: 30px;
+		font-size: 30px;
+		color: white;
+		position: absolute;
+		right: 0;
+		margin-right: 26%;
+		transition: 0.5s;
+	}
+	.hide{
+		display: none;
+		transition: 0.9s;
+		color: black;
+		position: absolute;
+		right: 0;
+		margin-right: 13%;
+	}
+
+}
+@media only screen and (max-width: 650px){
+	.checkbox{
+		position: absolute;
+		left: 0;
+	  	border-radius: 10px;
+		width: 28px;
+		height: 28px;
+		margin-left: 1%;
+	}
+	.content{
+		padding: 10px;
+		font-size: 20px;
+		flex-basis: 60%;
+		margin-left:  9%;
+		margin-right: 10%;
+		margin-top: 2px;
+	}
+	.delete-round{
+		font-size: 30px;
+		right: 0;
+		margin-right: 17%;
+	}
+	.hide{
+		font-size: 11px;
+		font-weight: 200;
+		right: 0;
+		margin-right: 1%;
+	}
+	#task{
+		width: 60%;
+		border: 0;
+		padding: 14px;
+		font-size: 16px;
+	}
+	.add{
+		padding: 14px 5px;
+		font-size: 13px;
+		font-weight: 300;
+	}
+	.clear{
+		padding: 14px 5px;
+		font-size: 13px;
+	}
+		/*CSS for social */
+	.social ul{
+		list-style-type: none;
+		justify-content: center;
+		position: relative;
+		bottom: -150px;
+	}
+	.social ul li{
+		display: inline;
+		padding: 1%;	
+		margin: 27px  ;
+	}
+
+}
+
+
+
+
+
